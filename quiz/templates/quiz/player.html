@@ -1,0 +1,19 @@
+{% extends "quiz/base.html" %}
+{% block title %}{{ quiz.title }}{% endblock %}
+{% block content %}
+<main id="player-app" class="player-app" data-player-id="{{ player.id }}" data-language="{{ player.language }}">
+  <section class="player-status">
+    <strong>{{ player.name }}</strong>
+    <span id="player-message">En attente / Đang chờ</span>
+    <button id="language-toggle" class="language-toggle" type="button" aria-label="Changer la langue"></button>
+  </section>
+  <section id="player-question" class="phone-question"></section>
+  <section class="phone-buttons">
+    <button data-color="red" class="choice red">...</button>
+    <button data-color="blue" class="choice blue">...</button>
+    <button data-color="green" class="choice green">...</button>
+    <button data-color="yellow" class="choice yellow">...</button>
+  </section>
+</main>
+<script src="/static/quiz/js/player.js"></script>
+{% endblock %}

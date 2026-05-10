@@ -1,0 +1,33 @@
+{
+  "title": "Quiz de test",
+  "code": "TEST",
+  "answer_duration_seconds": 10,
+  "questions": [
+    {
+      "order": 1,
+      "text_fr": "Quelle est la capitale du Vietnam ?",
+      "text_vi": "Thủ đô của Việt Nam là thành phố nào?",
+      "question_read_duration_seconds": 6,
+      "answer_read_duration_seconds": 4,
+      "answers": {
+        "red": {
+          "text_fr": "Hanoi",
+          "text_vi": "Hà Nội"
+        },
+        "blue": {
+          "text_fr": "Ho Chi Minh-Ville",
+          "text_vi": "Thành phố Hồ Chí Minh"
+        },
+        "green": {
+          "text_fr": "Hue",
+          "text_vi": "Huế"
+        },
+        "yellow": {
+          "text_fr": "Da Nang",
+          "text_vi": "Đà Nẵng"
+        }
+      },
+      "correct_color": "red"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{% extends "quiz/base.html" %}
+{% block title %}Rejoindre le quiz{% endblock %}
+{% block content %}
+<main class="join-page">
+
+  <header class="join-header">
+    <h1>Rejoindre le quiz</h1>
+    <p class="join-subtitle">Tham gia trò chơi</p>
+  </header>
+
+  {% for message in messages %}
+  <p class="join-alert">{{ message }}</p>
+  {% endfor %}
+
+  <div class="join-card">
+    {% if quiz %}
+      <p class="join-quiz-name">{{ quiz.title }}</p>
+      <form action="{% url 'quiz:join_submit' %}" method="post" class="join-form">
+        <input type="hidden" name="code" value="{{ quiz.code }}">
+
+        <div class="join-field">
+          <label for="j-name">Votre nom / Tên của bạn</label>
+          <input id="j-name" name="name" type="text" required maxlength="100"
+                 autocomplete="name" autofocus placeholder="…">
+        </div>
+
+        <fieldset class="join-lang-field">
+          <legend>Langue / Ngôn ngữ</legend>
+          <div class="join-lang-opts">
+            <label class="join-lang-opt">
+              <input type="radio" name="language" value="fr" required checked>
+              <span>🇫🇷 Français</span>
+            </label>
+            <label class="join-lang-opt">
+              <input type="radio" name="language" value="vi" required>
+              <span>🇻🇳 Tiếng Việt</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="join-btn">Entrer / Vào chơi</button>
+      </form>
+    {% else %}
+      <form action="/play/" method="get" class="join-form">
+        <div class="join-field">
+          <label for="j-code">Code / Mã</label>
+          <input id="j-code" name="code" type="text" value="{{ code }}"
+                 required maxlength="8" autocomplete="off" autofocus
+                 placeholder="XXXX" style="text-transform:uppercase">
+        </div>
+        <button type="submit" class="join-btn">Continuer / Tiếp tục</button>
+      </form>
+    {% endif %}
+  </div>
+
+</main>
+{% endblock %}

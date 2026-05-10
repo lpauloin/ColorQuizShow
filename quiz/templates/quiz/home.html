@@ -1,0 +1,13 @@
+{% extends "quiz/base.html" %}
+{% block title %}Entrer le code{% endblock %}
+{% block content %}
+<main class="simple-page">
+  <h1>Entrer le code du quiz</h1>
+  <h2>Nhập mã trò chơi</h2>
+  <form action="/play/" method="get" class="card-form">
+    <label>Code / Mã</label>
+    <input name="code" required maxlength="8" autocomplete="off" autofocus>
+    <button type="submit">Continuer / Tiếp tục</button>
+  </form>
+</main>
+{% endblock %}

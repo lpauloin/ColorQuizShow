@@ -1,0 +1,13 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% block title %}Color Quiz Show{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'quiz/css/app.css' %}">
+</head>
+<body>
+  {% block content %}{% endblock %}
+</body>
+</html>

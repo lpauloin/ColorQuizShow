@@ -1,0 +1,13 @@
+{% extends "quiz/base.html" %}
+{% block title %}Maître du jeu - {{ quiz.title }}{% endblock %}
+{% block content %}
+<main id="host-app" class="host-app" data-host-token="{{ quiz.host_token }}" data-play-url="{{ absolute_play_url }}">
+  <section id="host-stage" class="host-stage waiting-stage"></section>
+  <section class="host-controls">
+    <button id="start-btn">Commencer le quiz<br><small>Bắt đầu trò chơi</small></button>
+    <button id="pause-btn">Pause<br><small>Tạm dừng</small></button>
+    <button id="resume-btn">Reprendre<br><small>Tiếp tục</small></button>
+  </section>
+</main>
+<script src="/static/quiz/js/host.js"></script>
+{% endblock %}
